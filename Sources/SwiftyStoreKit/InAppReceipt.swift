@@ -108,8 +108,8 @@ internal class InAppReceipt {
         #endif
         
         // Verify that at least one receipt has the right product id
-        if let firstItem = receiptItems.first {
-            return .purchased(item: firstItem)
+        if !receiptItems.isEmpty {
+            return .purchased(item: receiptItems)
         }
         return .notPurchased
     }

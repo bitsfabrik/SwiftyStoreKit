@@ -164,7 +164,7 @@ public enum VerifyReceiptResult {
 
 /// Result for Consumable and NonConsumable
 public enum VerifyPurchaseResult {
-    case purchased(item: ReceiptItem)
+    case purchased(item: [ReceiptItem])
     case notPurchased
 }
 
