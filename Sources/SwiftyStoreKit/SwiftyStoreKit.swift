@@ -242,9 +242,9 @@ extension SwiftyStoreKit {
     /// - Parameter completion: handler for result
     /// - returns: A cancellable `InAppRequest` object 
     @discardableResult
-    public class func verifyReceipt(using validator: ReceiptValidator, forceRefresh: Bool = false, completion: @escaping (VerifyReceiptResult) -> Void) -> InAppRequest? {
+    public class func verifyReceipt(using validator: ReceiptValidator, forceRefresh: Bool = false, shouldRefresh: Bool = true, completion: @escaping (VerifyReceiptResult) -> Void) -> InAppRequest? {
         
-        return sharedInstance.receiptVerificator.verifyReceipt(using: validator, forceRefresh: forceRefresh, completion: completion)
+        return sharedInstance.receiptVerificator.verifyReceipt(using: validator, forceRefresh: forceRefresh, shouldRefresh: shouldRefresh, completion: completion)
     }
     
     /// Fetch application receipt
@@ -252,9 +252,9 @@ extension SwiftyStoreKit {
     /// - Parameter completion: handler for result
     /// - returns: A cancellable `InAppRequest` object 
     @discardableResult
-    public class func fetchReceipt(forceRefresh: Bool, completion: @escaping (FetchReceiptResult) -> Void) -> InAppRequest? {
+    public class func fetchReceipt(forceRefresh: Bool, shouldRefresh: Bool = true, completion: @escaping (FetchReceiptResult) -> Void) -> InAppRequest? {
         
-        return sharedInstance.receiptVerificator.fetchReceipt(forceRefresh: forceRefresh, completion: completion)
+        return sharedInstance.receiptVerificator.fetchReceipt(forceRefresh: forceRefresh, shouldRefresh: shouldRefresh, completion: completion)
     }
     
     ///  Verify the purchase of a Consumable or NonConsumable product in a receipt
