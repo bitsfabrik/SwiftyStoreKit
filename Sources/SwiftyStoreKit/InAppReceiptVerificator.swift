@@ -102,6 +102,7 @@ class InAppReceiptVerificator: NSObject {
             }
             return receiptRefreshRequest
         } else {
+            completion(.error(error: .noReceiptData))
             return nil
         }
     }
